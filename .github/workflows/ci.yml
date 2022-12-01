@@ -18,6 +18,5 @@ jobs:
     - name: Build
       run: dotnet build -c Release
 
-    - name: Solve all
-      run: dotnet run -c Release --no-build -- all
-      working-directory: ./AdventOfCode
+    - name: Test all
+      run: dotnet test

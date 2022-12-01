@@ -1,15 +1,39 @@
 ﻿namespace AdventOfCode;
 
-public class Day01 : BaseDay
+public class Day01 : BaseSolution
 {
-    private readonly string _input;
-
-    public Day01()
+    public Day01() : base(01)
     {
-        _input = File.ReadAllText(InputFilePath);
     }
 
-    public override ValueTask<string> Solve_1() => new($"Solution to {ClassPrefix} {CalculateIndex()}, part 1");
+    public override async ValueTask<string> Solve_1() =>
+        GetCalorieSums()
+            .Max()
+            .ToString();
 
-    public override ValueTask<string> Solve_2() => new($"Solution to {ClassPrefix} {CalculateIndex()}, part 2");
+
+    public override async ValueTask<string> Solve_2() => 
+        GetCalorieSums()
+            .OrderByDescending(i => i)
+            .Take(3)
+            .Sum()
+            .ToString();
+
+    private IEnumerable<int> GetCalorieSums()
+    {
+        return InputLines.Aggregate(new List<int>{0}, (ints, s) =>
+        {
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                ints.Add(0);
+                return ints;
+            }
+
+            ints[^1] += int.Parse(s);
+            return ints;
+        });
+    }
+
+    public override string PartOneSolution => "69206";
+    public override string PartTwoSolution => "197400";
 }

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Util.fs" />
+        <Content Include="..\AdventOfCode\Inputs\26.txt">
+          <Link>Inputs\26.txt</Link>
+        </Content>
+        <Content Include="..\AdventOfCode\Inputs\01.txt">
+          <Link>Inputs\01.txt</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Solutions\Day01.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\InputProvider\InputProvider.csproj" />
+    </ItemGroup>
+
+</Project>
