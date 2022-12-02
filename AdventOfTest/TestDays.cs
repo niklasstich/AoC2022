@@ -1,5 +1,6 @@
 using System.Collections;
 using AdventOfCode;
+using AdventOfCode.Solutions;
 using NUnit.Framework;
 
 namespace AdventOfTest;

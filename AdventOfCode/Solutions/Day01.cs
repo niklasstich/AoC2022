@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode;
+﻿namespace AdventOfCode.Solutions;
 
 public class Day01 : BaseSolution
 {
