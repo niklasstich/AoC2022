@@ -27,5 +27,6 @@ public class Days : IEnumerable
     public IEnumerator GetEnumerator()
     {
         yield return new Day01();
+        yield return new Day02();
     }
 }
