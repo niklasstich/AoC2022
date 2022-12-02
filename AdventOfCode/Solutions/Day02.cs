@@ -45,7 +45,7 @@ public class Day02 : BaseSolution
     private int GetPartTwoResult((char, char) arg)
     {
         //self\enemy   rock      paper     scissors
-        //lose         scissors  stone     paper
+        //lose         scissors  rock      paper
         //draw         rock      paper     scissors
         //win          paper     scissors  rock
         //enemy - same as part 1
