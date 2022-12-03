@@ -18,9 +18,7 @@ public class Day03 : BaseSolution
 
     public override async ValueTask<string> Solve_2() =>
         InputLines
-            .Select((s, i) => (s, i / 3))
-            .GroupBy(tup => tup.Item2)
-            .Select(UnpackStrings)
+            .Chunk(3)
             .Select(FindBadge)
             .Select(GetCharValue)
             .Sum()
@@ -37,8 +35,6 @@ public class Day03 : BaseSolution
             >= 'A' and <= 'Z' => c - 'A' + 27,
             _ => throw new ArgumentOutOfRangeException(nameof(c), c, null)
         };
-
-    private static IEnumerable<string> UnpackStrings(IGrouping<int, (string s, int)> arg) => arg.Select(tup => tup.s);
 
     private static char FindBadge(IEnumerable<string> arg) =>
         arg.Aggregate(
