@@ -32,5 +32,6 @@ public class Days : IEnumerable
         yield return new Day04();
         yield return new Day05();
         yield return new Day06();
+        yield return new Day07();
     }
 }
